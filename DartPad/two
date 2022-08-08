@@ -1,0 +1,26 @@
+class Person {
+  String name = "";
+  String surname = "";
+  int _age = 0;
+  set age(int years) {
+    if (years > 0 && years < 120) {
+      _age = years;
+    } else {
+      _age = 0;
+    }
+  }
+  int get age {
+    return _age;
+  }
+  Person(this.name, this.surname);
+  Person.empty();
+  void printId() {
+    print("$name $surname ($_age)");
+  }
+}
+
+void main(){
+  Person clark = Person("Clark", "Kent");
+  clark.age = 30;
+  clark.printId();
+}
