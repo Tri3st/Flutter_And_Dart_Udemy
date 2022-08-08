@@ -5,4 +5,4 @@
 So far :
 
 - first_app
-- basics-00
+- basics-00-starting-project
