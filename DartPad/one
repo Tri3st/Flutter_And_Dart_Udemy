@@ -1,0 +1,105 @@
+class Person {
+  String name;
+  String surname;
+  int age;
+  
+  Person({this.name = "", this.age = 0});
+  
+  String greet() {
+    return "Hello, my name is " + name + " and I am " + age.toString() + " years old.";
+  }
+  
+}
+
+double calculateArea (double width, double height, [bool isTriangle = false]) {
+  double area;
+  
+  if (isTriangle){
+    area = width * height / 2;
+  } else {
+    area = width * height;
+  }
+  return area;
+}
+
+double addNumbers (double num1, double num2) {
+  // print(num1 + num2);
+  return num1 + num2;
+}
+
+String reverse(String old) {
+  int length = old.length;
+  String res = '';
+  for (int i = length - 1; i >= 0; i--){
+    res += old[i];
+  }
+  return res;
+}
+
+bool convertToBoolLong(int value) {
+  if (value == 1) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+// is the same as 
+
+bool convertToBoolShort(int value) => (value == 0) ? false : true;
+
+String sing(){
+  var songs = <String>[];
+  var songString = '';
+  songs.add('We will rock you');
+  songs.add('One');
+  songs.add('Sultans of swing');
+  int i = 0;
+  while (i < songs.length) {
+    songString += '${songs[i]} - ';
+    i++;
+  }
+  return songString;
+}
+
+String song2() {
+  var songs = <String>[];
+  var songString = '';
+  songs.add('We will rock you');
+  songs.add('One');
+  songs.add('Sultans of swing');
+  songs.forEach((song) => songString += song + " - ");
+  return songString;
+}
+
+String capitalSongs() {
+  var songs = <String>[];
+  var songString = '';
+  songs.add('We will rock you');
+  songs.add('One');
+  songs.add('Sultans of swing');
+  var capitals = songs.map((song) => song.toUpperCase());
+  return capitals.toString();
+}
+
+void main() {
+  double result  = calculateArea(12, 5);
+  print("The result is " + result.toString());
+  double tri = calculateArea(12, 5, true);
+  print("The result of triangle  is " + tri.toString());
+  
+  String myString = 'Throw your Dart';
+  String result2 = reverse(myString);
+  
+  print(result2);
+  
+  String mySongs = sing();
+  print(mySongs);
+  
+  String mySongs2 = song2();
+  print(mySongs2);
+  
+  String mySongs3 = capitalSongs();
+  print(mySongs3);
+  
+}
